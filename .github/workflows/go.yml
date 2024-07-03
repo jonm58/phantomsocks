@@ -44,9 +44,9 @@ jobs:
 
     - name: Build
       run: |
-        go build  -o ./phantomsocks-original
-        go build  -o ./phantomsocks-pcap -tags pcap
-        go build  -o ./phantomsocks-windivert -tags windivert 
+        go build -v ./...
+        go build -v -tags pcap ./...
+        go build -v -tags windivert ./...
     - name: upload
       uses: actions/upload-artifact@v4
       with:
